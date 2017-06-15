@@ -1,0 +1,33 @@
+.ipa-glyph {
+  display: inline-block;
+  position: relative;
+}
+
+/* When static */
+
+.ipa-glyph-static-glyph {
+  display: inline-block;
+  font-size: 32px;
+  height: 64px;
+  width: 64px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 28px;
+}
+
+/* When the user wants to edit */
+.ipa-glyph input {
+  font-size: 32px;
+  height: 64px;
+  width: 64px;
+  text-align: center;
+
+  border: 2px solid #DDD;
+  border-radius: 3px;
+}
+
+.ipa-glyph-picker {
+  background: red;
+  width: 28px;
+  position: absolute;
+}

@@ -1,0 +1,13 @@
+.ipa-refiner {
+  display: flex;
+  max-width: 800px;
+  margin: 20px auto;
+  align-items: center;
+  height: 100vh;
+}
+
+.ipa-refiner-glyph {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
