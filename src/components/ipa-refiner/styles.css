@@ -1,13 +1,28 @@
-.ipa-refiner {
+/* Make sure the ipa refiner is centered */
+.ipa-refiner-container {
   display: flex;
-  max-width: 800px;
-  margin: 20px auto;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  height: 100%;
 }
 
-.ipa-refiner-glyph {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+.ipa-refiner {
+  width: 800px;
+}
+
+
+.ipa-refiner-input {
+  max-width: 800px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 72px;
+}
+.ipa-refiner-input input {
+  border: 2px solid #DDD;
+  width: 100%;
+  padding: 20px;
+  font-size: 32px;
+
+  letter-spacing: 72px;
+  padding-left: calc(72px / 2);
 }

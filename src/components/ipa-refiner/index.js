@@ -1,8 +1,6 @@
 import * as React from 'react';
 import './styles.css';
 
-import IPAGlyph from '../ipa-glyph/index';
-
 export default class IPARefiner extends React.Component {
   constructor(props) {
     super(props);
@@ -12,25 +10,28 @@ export default class IPARefiner extends React.Component {
     };
   }
 
+  selectGlyph(e) {
+    // TODO: 100 is a bad number her, should be 72. That doesn't work tho...
+    const characterIndex = (e.clientX - 12) / 100;
+
+    console.log(characterIndex);
+  }
+
   render() {
     const {
       glyphs,
     } = this.props;
 
-    return <div className="ipa-refiner">
-      {glyphs.map((glyph, index) => {
-        return <div className="ipa-refiner-glyph">
-          <IPAGlyph
-            key={`${glyph} ${index}`}
-            glyph={glyph}
-            isEditing={index === this.state.editingIndex}
-            onSelectedGlyph={() => {
-              // When the user clicked on this glyph to select it...
-              this.setState({editingIndex: index});
-            }}
+    return <div className="ipa-refiner-container">
+      <div className="ipa-refiner">
+        <div className="ipa-refiner-input">
+          <input
+            type="text"
+            value={glyphs.join('')}
+            onClick={this.selectGlyph.bind(this)}
           />
-        </div>;
-      })}
+        </div>
+      </div>
     </div>;
   }
 }

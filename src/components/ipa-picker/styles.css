@@ -1,0 +1,56 @@
+.ipa-glyph {
+  display: inline-block;
+  position: relative;
+}
+
+/* When static */
+
+.ipa-glyph-static-glyph {
+  display: inline-block;
+  font-size: 32px;
+  height: 64px;
+  width: 64px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 28px;
+}
+
+/* When the user wants to edit */
+.ipa-glyph input {
+  font-size: 32px;
+  height: 64px;
+  width: 64px;
+  text-align: center;
+
+  border: 2px solid #DDD;
+  border-radius: 3px;
+}
+
+/* When the user wants to update the selected value, allow them to do that. */
+.ipa-glyph-picker {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  background: #DDD;
+  width: 64px;
+  margin-left: 3px;
+  list-style-type: none;
+  padding-left: 0px;
+
+  z-index: -10;
+}
+.ipa-glyph-picker.ipa-glyph-picker-above {
+  position: absolute;
+  bottom: 70px;
+}
+.ipa-glyph-picker.ipa-glyph-picker-below {
+  position: absolute;
+  top: 70px;
+}
+
+.ipa-glyph-picker li {
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  cursor: pointer;
+}

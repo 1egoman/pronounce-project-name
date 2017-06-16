@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './styles.css';
 
-export default class IPAGlyph extends React.Component {
+export default class IPAPicker extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -28,7 +28,12 @@ export default class IPAGlyph extends React.Component {
           ref={input => { this.glyphInput = input; }}
         />
 
-        <ul className="ipa-glyph-picker">
+        <ul className="ipa-glyph-picker ipa-glyph-picker-above">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+        </ul>
+        <ul className="ipa-glyph-picker ipa-glyph-picker-below">
           <li>A</li>
           <li>B</li>
           <li>C</li>
