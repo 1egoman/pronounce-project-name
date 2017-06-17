@@ -1,37 +1,9 @@
-.ipa-glyph {
-  display: inline-block;
-  position: relative;
-}
-
-/* When static */
-
-.ipa-glyph-static-glyph {
-  display: inline-block;
-  font-size: 32px;
-  height: 64px;
-  width: 64px;
-  text-align: center;
-  cursor: pointer;
-  margin-top: 28px;
-}
-
-/* When the user wants to edit */
-.ipa-glyph input {
-  font-size: 32px;
-  height: 64px;
-  width: 64px;
-  text-align: center;
-
-  border: 2px solid #DDD;
-  border-radius: 3px;
-}
-
 /* When the user wants to update the selected value, allow them to do that. */
-.ipa-glyph-picker {
+.ipa-picker-parent {
   margin-top: 0px;
   margin-bottom: 0px;
 
-  background: #DDD;
+  position: absolute;
   width: 64px;
   margin-left: 3px;
   list-style-type: none;
@@ -39,16 +11,25 @@
 
   z-index: -10;
 }
-.ipa-glyph-picker.ipa-glyph-picker-above {
-  position: absolute;
-  bottom: 70px;
+.ipa-picker {
+  width: 64px;
+  margin-left: 3px;
+  list-style-type: none;
+  padding-left: 0px;
+  background: #DDD;
+
+  z-index: -10;
 }
-.ipa-glyph-picker.ipa-glyph-picker-below {
+.ipa-picker.ipa-picker-above {
   position: absolute;
-  top: 70px;
+  bottom: 16px;
+}
+.ipa-picker.ipa-picker-below {
+  position: absolute;
+  top: 28px;
 }
 
-.ipa-glyph-picker li {
+.ipa-picker li {
   height: 64px;
   line-height: 64px;
   text-align: center;

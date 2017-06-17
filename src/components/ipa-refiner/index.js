@@ -1,6 +1,10 @@
 import * as React from 'react';
 import './styles.css';
 
+import IPAPicker from '../ipa-picker/index';
+
+const CELL_SIZE = 72; /* px */
+
 export default class IPARefiner extends React.Component {
   constructor(props) {
     super(props);
@@ -12,9 +16,9 @@ export default class IPARefiner extends React.Component {
 
   selectGlyph(e) {
     // TODO: 100 is a bad number her, should be 72. That doesn't work tho...
-    const characterIndex = (e.clientX - 12) / 100;
-
-    console.log(characterIndex);
+    const demarginized = e.clientX - e.target.getBoundingClientRect().left;
+    const characterIndex = Math.floor(e.clientX / CELL_SIZE);
+    this.setState({editingIndex: characterIndex});
   }
 
   render() {
@@ -32,6 +36,11 @@ export default class IPARefiner extends React.Component {
           />
         </div>
       </div>
+
+      {this.state.editingIndex > -1 ? <IPAPicker
+        startPosition={this.state.editingIndex * CELL_SIZE}
+        glyph={glyphs[this.state.editingIndex]}
+      /> : null}
     </div>;
   }
 }
